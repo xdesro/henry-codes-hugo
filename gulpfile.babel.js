@@ -41,10 +41,10 @@ gulp.task("hugo", cb => buildSite(cb));
 gulp.task("hugo-preview", cb =>
   buildSite(cb, ["--buildDrafts", "--buildFuture"])
 );
-gulp.task("build", ["css", "js", "hugo"]);
-gulp.task("build-preview", ["css", "js", "hugo-preview"]);
+gulp.task("build", ["scss", "js", "hugo"]);
+gulp.task("build-preview", ["scss", "js", "hugo-preview"]);
 
-gulp.task("css", () =>
+gulp.task("scss", () =>
   gulp
   .src("./src/scss/*.scss")
   .pipe(sass().on("error", sass.logError))
@@ -92,14 +92,14 @@ gulp.task("svg", () => {
     .pipe(gulp.dest("site/layouts/partials/"));
 });
 
-gulp.task("server", ["hugo", "css", "js", "svg"], () => {
+gulp.task("server", ["hugo", "scss", "js", "svg"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"
     }
   });
   gulp.watch("./src/js/**/*.js", ["js"]);
-  gulp.watch("./src/scss/**/*.scss", ["scss"]);
+  gulp.watch("./src/scss/**/*.scss", ["scss", "hugo"]);
   gulp.watch("./site/static/img/icons-*.svg", ["svg"]);
   gulp.watch("./site/**/*", ["hugo"]);
 });
