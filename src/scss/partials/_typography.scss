@@ -1,0 +1,99 @@
+body {
+    font-family: $font-sans;
+    font-size: 16px;
+}
+
+samp,
+code,
+pre {
+    font-family: $font-mono;
+}
+
+p,
+li {
+    font-size: 16px;
+    color: $mono-47;
+    line-height: 1.5;
+}
+
+a {
+    color: $mono-47;
+
+    &:hover {
+        color: $mono-0;
+    }
+}
+
+.emphasis {
+    font-weight: 800;
+    color: $mono-0;
+}
+
+.list {
+    &--none {
+        list-style-type: none;
+        padding-inline-start: 0;
+    }
+
+    &--arrow-style {
+        list-style-type: none;
+        padding-inline-start: 0;
+
+        li {
+            margin-bottom: 1em;
+
+            &:before {
+                content: "→";
+                margin-right: 5px;
+            }
+        }
+    }
+    &--social {
+        li {
+            line-height: 2;
+        }
+        a {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            grid-gap: 5px;
+            cursor: pointer;
+            &:before {
+                width: 16px;
+                display: inline-block;
+                opacity: .47
+            }
+            &:hover {
+                &:before {
+                    opacity: 1;
+                }
+            }
+        }
+        $social-links: twitter, instagram, codepen, stackoverflow, github, linkedin, twitch;
+        @each $link in $social-links {
+            .#{$link} {
+                &:before {
+                    content: url('/img/icons/#{$link}.svg')
+                }
+            }
+        }
+    }
+}
+
+.link {
+    text-decoration: none;
+    color: $mono-47;
+    &--view-all {
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 3.5px;
+        text-align: right;
+        text-transform: uppercase;
+        display: block;
+
+        &:after {
+            content: "→";
+            margin-left: 10px;
+        }
+    }
+}

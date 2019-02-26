@@ -7,6 +7,7 @@ import svgstore from "gulp-svgstore";
 import svgmin from "gulp-svgmin";
 import inject from "gulp-inject";
 import sass from "gulp-sass";
+import autoprefixer from 'gulp-autoprefixer';
 import webpackConfig from "./webpack.conf";
 
 const browserSync = BrowserSync.create();
@@ -47,7 +48,15 @@ gulp.task("build-preview", ["scss", "js", "hugo-preview"]);
 gulp.task("scss", () =>
   gulp
   .src("./src/scss/*.scss")
-  .pipe(sass().on("error", sass.logError))
+  .pipe(
+    sass({
+      includePaths: ["node_modules"]
+    }).on("error", sass.logError)
+  )
+  .pipe(autoprefixer({
+    browsers: ['last 2 versions'],
+    cascade: false
+  }))
   .pipe(gulp.dest("./dist/css"))
 );
 

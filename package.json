@@ -50,6 +50,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.11.0",
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-inject": "^5.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-svgmin": "^1.2.3",

@@ -1,0 +1,25 @@
+$font-sans: -apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Helvetica,
+Arial,
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol";
+
+$font-mono: "SFMono-Regular",
+Consolas,
+"Liberation Mono",
+Menlo,
+Courier,
+monospace;
+
+$mono-0: hsl(0, 0, 0%);
+$mono-47: hsl(0, 0%, 47%);
+
+$screens: (xs: 300px,
+sm: 600px,
+md: 900px,
+lg: 1200px);

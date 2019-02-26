@@ -1,5 +1,103 @@
 {{ define "main" }}
+<main class="main layout--index container">
+    <div class="main__page-indicator">00.</div>
+    <div class="intro-content">
+        <p>Hi, I'm</p>
+        <h1>Henry<br>Desroches.</h1>
+        <p>I’m a Denver-based creative technologist with a passion for CSS, animation, and deleting code. </p>
+    </div>
+    <section class="section">
+        <div class="homepage-section">
+            <div class="homepage-section__header">
+                <h3 class="homepage-section__title">Work.</h3>
+                <span class="homepage-section__counter">01</spancl>
+            </div>
+            <div class="homepage-section__content">
+                <ul class="list--none">
+                    <li class="work-item">
+                        <p class="work-item__client">Promontech</p>
+                        <p class="work-item__tagline">Style code and UI architecture for the future of digital
+                            home-buying.</p>
+                    </li>
+                    <li class="work-item">
+                        <p class="work-item__client">Digital Continuum</p>
+                        <p class="work-item__tagline">A framework for digital delivery for enterprise companies.</p>
+                    </li>
+                    <li class="work-item">
+                        <p class="work-item__client">Absolute Merch</p>
+                        <p class="work-item__tagline">Slick, responsive, and animated solutions for a music e-commerce
+                            platform.</p>
+                    </li>
+                </ul>
+                <a href="#" class="link link--view-all">View All</a>
 
+            </div>
+        </div>
+        <div class="homepage-section">
+            <div class="homepage-section__header">
+                <h3 class="homepage-section__title">Experience.</h3>
+                <span class="homepage-section__counter">02</span>
+            </div>
+            <div class="homepage-section__content">
+                <ul class="list--none">
+                    <li class="experience-item">
+                        <p class="experience-item__header">
+                            <span class="experience-item__role">UI Engineer</span> @
+                            <span class="experience-item__company">Promontech</span></p>
+                        <span class="experience-item__dates">January 2018 -</span>
+                    </li>
+                    <li class="experience-item">
+                        <p class="experience-item__header"><span class="experience-item__role">Interaction Developer</span>
+                            @ <span class="experience-item__company">Universal Mind</span></p>
+                        <span class="experience-item__dates">Mar 2016 - Jan 2018</span>
+                    </li>
+                    <li class="experience-item">
+                        <p class="experience-item__header"><span class="experience-item__role">UI Developer</span> @
+                            <span class="experience-item__company">GDW</span></p>
+                        <span class="experience-item__dates">summer 2015 - mar 2016</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="homepage-section experiments">
+            <div class="homepage-section__header">
+                <h3 class="homepage-section__title">Experiments &amp; Ideas.</h3>
+                <span class="homepage-section__counter">03</span>
+            </div>
+            <div class="homepage-section__content">
+                <ul class="list--arrow-style">
+                    <li>A pure SCSS Material Design palette generator</li>
+                    <li>SVG
+                        <code>&lt;clip-path&gt;</code> to create works of art with CSS.</li>
+                    <li>#Codevember: A month of daily creative code micro-projects.</li>
+                    <li>Pure CSS isometric towers CSS art.</li>
+                    <li>An Alfred 3 package for making your text very ˢᵐᵒˡ.</li>
+                </ul>
+                <a href="#" class="link link--view-all">View All</a>
+            </div>
+        </div>
+        <div class="homepage-section">
+            <div class="homepage-section__header">
+                <h3 class="homepage-section__title">Contact.</h3>
+                <span class="homepage-section__counter">04</span>
+            </div>
+            <div class="homepage-section__content">
+                <p>I'm most active <a href="#">on Twitter</a> or <a href="mailto:yo@henry.codes">via email</a>, but you
+                    can find me most places on the internet as <span class="emphasis">@xdesro</span>.</p>
+                <ul class="list--none list--social">
+                    <li><a class="twitter">twitter</a></li>
+                    <li><a class="instagram">instagram</a></li>
+                    <li><a class="codepen">codepen</a></li>
+                    <li><a class="stackoverflow">stackoverflow</a></li>
+                    <li><a class="github">github</a></li>
+                    <li><a class="linkedin">linkedin</a></li>
+                    <li><a class="twitch">twitch</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- 
 {{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
 
 {{ partial "short-text" .Params.blurb}}
@@ -8,6 +106,6 @@
 
 {{ partial "text-and-image" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read more" "buttonLink" "/values") }}
 
-{{ partial "blog" . }}
+{{ partial "blog" . }} -->
 
 {{ end }}

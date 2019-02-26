@@ -1,1 +1,8 @@
-@import 'partials/header';
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/typography';
+@import 'partials/layout';
+
+@import 'components/header';
+
+@import 'pages/index';

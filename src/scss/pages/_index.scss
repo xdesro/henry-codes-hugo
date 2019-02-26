@@ -1,0 +1,134 @@
+.layout {
+    &--index {
+        display: grid;
+        // grid-auto-flow: column;
+        height: 100%;
+        justify-content: space-between;
+        align-content: space-between;
+        grid-gap: 40px;
+
+        @include screen(lg) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: "indicator sections""intro sections";
+        }
+    }
+}
+
+.intro-content {
+    align-self: end;
+    padding-bottom: 40px;
+
+    @include screen(lg) {
+        grid-area: intro;
+    }
+
+    p {
+        font-size: 32px;
+        color: $mono-47;
+        line-height: 48px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: 72px;
+        color: $mono-0;
+        line-height: 72px;
+        margin-block-start: 0;
+        margin-block-end: 28px;
+    }
+}
+
+.section {
+    @include screen(md) {
+        column-count: 2;
+    }
+
+    @include screen(lg) {
+        grid-area: sections;
+    }
+}
+
+.homepage-section {
+    margin-bottom: 50px;
+    break-inside: avoid;
+
+    &__header {
+        display: grid;
+        align-items: start;
+        grid-template-columns: 1fr auto;
+        border-bottom: 4px solid $mono-0;
+        padding-bottom: 20px;
+        margin-bottom: 25px;
+
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 24apx;
+        color: $mono-0;
+        margin-block-end: 0;
+        margin-block-start: 0;
+    }
+
+    &__counter {
+        font-weight: 700;
+        color: $mono-47;
+    }
+
+    &__content {
+        font-size: 18px;
+        color: $mono-47;
+        .list--social {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            font-weight: 700;
+        }
+    }
+}
+
+.work-item {
+    margin-bottom: 25px;
+
+    &__client {
+        font-weight: 700;
+        font-size: 12px;
+        color: $mono-47;
+        letter-spacing: 3.5px;
+        text-transform: uppercase;
+        margin-block-end: .5em;
+    }
+
+    &__tagline {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+}
+
+.experience-item {
+    font-size: 20px;
+    color: $mono-47;
+    line-height: 1;
+    margin-bottom: 25px;
+
+    &__header {
+        margin-block-end: 0;
+    }
+
+    &__role {
+        font-weight: 700;
+    }
+
+    &__company {
+        white-space: nowrap;
+    }
+
+    &__dates {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: $mono-47;
+        letter-spacing: 3.5px;
+    }
+}

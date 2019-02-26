@@ -1,0 +1,7 @@
+@mixin screen($size) {
+    $screen: map-get($screens, $size);
+
+    @media screen and (min-width: $screen) {
+        @content;
+    }
+}

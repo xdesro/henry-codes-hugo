@@ -1,0 +1,35 @@
+.header {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: end;
+    border-bottom: 4px solid $mono-0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    p {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+    &__link {
+        text-decoration: none;
+        font-size: 28px;
+        color: $mono-0;
+        font-weight: 700;
+    }
+
+    &__description {
+        justify-self: end;
+        text-align: right;
+    }
+
+    &__purpose {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    &__date {
+        font-size: 24px;
+        line-height: 1;
+    }
+}
