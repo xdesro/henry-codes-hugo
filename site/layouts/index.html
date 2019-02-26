@@ -1,16 +1,17 @@
 {{ define "main" }}
 <main class="main layout--index container">
-    <div class="main__page-indicator">00.</div>
+    <div class="main__page-indicator">{{ .Params.page_number }}.</div>
     <div class="intro-content">
-        <p>Hi, I'm</p>
+        {{ .Content }}
+        <!-- <p>Hi, I'm</p>
         <h1>Henry<br>Desroches.</h1>
-        <p>I’m a Denver-based creative technologist with a passion for CSS, animation, and deleting code. </p>
+        <p>I’m a Denver-based creative technologist with a passion for CSS, animation, and deleting code. </p> -->
     </div>
     <section class="section">
         <div class="homepage-section">
             <div class="homepage-section__header">
                 <h3 class="homepage-section__title">Work.</h3>
-                <span class="homepage-section__counter">01</spancl>
+                <span class="homepage-section__counter">01</span>
             </div>
             <div class="homepage-section__content">
                 <ul class="list--none">
@@ -77,35 +78,30 @@
             </div>
         </div>
         <div class="homepage-section">
-            <div class="homepage-section__header">
-                <h3 class="homepage-section__title">Contact.</h3>
-                <span class="homepage-section__counter">04</span>
-            </div>
-            <div class="homepage-section__content">
-                <p>I'm most active <a href="#">on Twitter</a> or <a href="mailto:yo@henry.codes">via email</a>, but you
-                    can find me most places on the internet as <span class="emphasis">@xdesro</span>.</p>
-                <ul class="list--none list--social">
-                    <li><a class="twitter">twitter</a></li>
-                    <li><a class="instagram">instagram</a></li>
-                    <li><a class="codepen">codepen</a></li>
-                    <li><a class="stackoverflow">stackoverflow</a></li>
-                    <li><a class="github">github</a></li>
-                    <li><a class="linkedin">linkedin</a></li>
-                    <li><a class="twitch">twitch</a></li>
-                </ul>
-            </div>
+            {{ with .Site.GetPage "/contact" }}
+                <div class="homepage-section__header">
+                    <h3 class="homepage-section__title">{{ .Params.title }}.</h3>
+                    <span class="homepage-section__counter">{{ .Params.page_number }}</span>
+                </div>
+                <div class="homepage-section__content">
+                    {{ .Content }}
+                    <ul class="list--none list--social">
+                        {{ range .Params.contact_entries  }}
+                            <li>
+                                <a class="{{ .name }}" href="{{ .url }}">{{ .name }}</a>
+                            </li>
+                        {{ end }}
+                        <!-- <li><a class="twitter">twitter</a></li>
+                        <li><a class="instagram">instagram</a></li>
+                        <li><a class="codepen">codepen</a></li>
+                        <li><a class="stackoverflow">stackoverflow</a></li>
+                        <li><a class="github">github</a></li>
+                        <li><a class="linkedin">linkedin</a></li>
+                        <li><a class="twitch">twitch</a></li> -->
+                    </ul>
+                </div>
+            {{ end }}
         </div>
     </section>
 </main>
-<!-- 
-{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
-
-{{ partial "short-text" .Params.blurb}}
-
-{{ partial "2-up" .Params }}
-
-{{ partial "text-and-image" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read more" "buttonLink" "/values") }}
-
-{{ partial "blog" . }} -->
-
 {{ end }}

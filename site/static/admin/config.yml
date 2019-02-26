@@ -24,25 +24,26 @@ collections: # A list of collections the CMS should be able to edit
         name: "home"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Header Purpose, name: header-purpose, widget: string}
-          - {label: Intro, name: intro, widget: text}
+          - {label: Page Number, name: page_number, widget: string}
+          - {label: Header Purpose, name: header_purpose, widget: string}
+          - {label: Body, name: body, widget: markdown}
       - file: "site/content/contact/_index.md"
         label: "Contact Page"
         name: "contact"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Logo, name: logo, widget: image}
+          - {label: Page Number, name: page_number, widget: string}
           - {label: Body, name: body, widget: markdown}
           - label: Contact Entries
             name: contact_entries
             widget: list
             fields:
-              - label: Heading
-                name: heading
+              - label: Name
+                name: name
                 widget: string
-              - label: Text
-                name: text
-                widget: text
+              - label: Url
+                name: url
+                widget: string
       - file: "site/content/products/_index.md"
         label: "Products Page"
         name: "products"
