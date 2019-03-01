@@ -54,6 +54,7 @@ a {
         }
         a {
             display: grid;
+            text-decoration: none;
             grid-template-columns: auto 1fr;
             align-items: center;
             grid-gap: 5px;
