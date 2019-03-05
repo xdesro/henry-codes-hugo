@@ -28,7 +28,6 @@
                     </li>
                 </ul>
                 <a href="#" class="link link--view-all">View All</a>
-
             </div>
         </div>
         <div class="homepage-section">
@@ -38,22 +37,17 @@
             </div>
             <div class="homepage-section__content">
                 <ul class="list--none">
+                    {{ range where .Pages "Section" "experience" }}
                     <li class="experience-item">
                         <p class="experience-item__header">
-                            <span class="experience-item__role">UI Engineer</span> @
-                            <span class="experience-item__company">Promontech</span></p>
-                        <span class="experience-item__dates">January 2018 -</span>
+                            <span class="experience-item__role">{{ .Params.role }}</span> @
+                            <span class="experience-item__company">{{ .Params.team }}</span></p>
+                        <span class="experience-item__dates">
+                            {{ dateFormat "January 2006" .Params.start_date }} -
+                            {{ with .Params.end_date }}{{ dateFormat "January 2006" . }}{{ end }}
+                        </span>
                     </li>
-                    <li class="experience-item">
-                        <p class="experience-item__header"><span class="experience-item__role">Interaction Developer</span>
-                            @ <span class="experience-item__company">Universal Mind</span></p>
-                        <span class="experience-item__dates">Mar 2016 - Jan 2018</span>
-                    </li>
-                    <li class="experience-item">
-                        <p class="experience-item__header"><span class="experience-item__role">UI Developer</span> @
-                            <span class="experience-item__company">GDW</span></p>
-                        <span class="experience-item__dates">summer 2015 - mar 2016</span>
-                    </li>
+                    {{end}}
                 </ul>
             </div>
         </div>
@@ -76,20 +70,20 @@
         </div>
         <div class="homepage-section">
             {{ with .Site.GetPage "/contact" }}
-                <div class="homepage-section__header">
-                    <h3 class="homepage-section__title">{{ .Params.title }}.</h3>
-                    <span class="homepage-section__counter">{{ .Params.page_number }}</span>
-                </div>
-                <div class="homepage-section__content">
-                    {{ .Content }}
-                    <ul class="list--none list--social">
-                        {{ range .Params.contact_entries  }}
-                            <li>
-                                <a class="{{ .name }}" href="{{ .url }}">{{ .name }}</a>
-                            </li>
-                        {{ end }}
-                    </ul>
-                </div>
+            <div class="homepage-section__header">
+                <h3 class="homepage-section__title">{{ .Params.title }}.</h3>
+                <span class="homepage-section__counter">{{ .Params.page_number }}</span>
+            </div>
+            <div class="homepage-section__content">
+                {{ .Content }}
+                <ul class="list--none list--social">
+                    {{ range .Params.contact_entries }}
+                    <li>
+                        <a class="{{ .name }}" href="{{ .url }}">{{ .name }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
             {{ end }}
         </div>
     </section>
