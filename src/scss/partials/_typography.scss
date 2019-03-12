@@ -1,3 +1,8 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 body {
     font-family: $font-sans;
     font-size: 16px;
@@ -33,6 +38,16 @@ a {
     &--none {
         list-style-type: none;
         padding-inline-start: 0;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                p {
+                    color: $mono-0;
+                }
+            }
+        }
     }
 
     &--arrow-style {
@@ -42,16 +57,25 @@ a {
         li {
             margin-bottom: 1em;
 
+
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+
             &:before {
                 content: "→";
                 margin-right: 5px;
             }
         }
     }
+
     &--social {
         li {
             line-height: 2;
         }
+
         a {
             display: grid;
             text-decoration: none;
@@ -59,18 +83,28 @@ a {
             align-items: center;
             grid-gap: 5px;
             cursor: pointer;
+
             &:before {
                 width: 16px;
                 display: inline-block;
                 opacity: .47
             }
+
             &:hover {
                 &:before {
                     opacity: 1;
                 }
             }
         }
-        $social-links: twitter, instagram, codepen, stackoverflow, github, linkedin, twitch;
+
+        $social-links: twitter,
+        instagram,
+        codepen,
+        stackoverflow,
+        github,
+        linkedin,
+        twitch;
+
         @each $link in $social-links {
             .#{$link} {
                 &:before {
@@ -84,6 +118,7 @@ a {
 .link {
     text-decoration: none;
     color: $mono-47;
+
     &--view-all {
         font-weight: 700;
         font-size: 14px;

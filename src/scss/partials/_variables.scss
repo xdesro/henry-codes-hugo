@@ -16,8 +16,10 @@ Menlo,
 Courier,
 monospace;
 
-$mono-0: hsl(0, 0, 0%);
+// $mono-0: hsl(0, 0, 0%);
+$mono-0: hsl(0, 2%, 11%);
 $mono-47: hsl(0, 0%, 47%);
+$mono-100: hsl(0, 0%, 100%);
 
 $screens: (xs: 300px,
 sm: 600px,

@@ -1,8 +1,11 @@
+// @import 'vendor/raster.grid.css';
 @import 'partials/variables';
 @import 'partials/mixins';
 @import 'partials/typography';
 @import 'partials/layout';
 
 @import 'components/header';
+@import 'components/work-hero';
 
 @import 'pages/index';
+@import 'pages/work';

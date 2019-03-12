@@ -1,5 +1,4 @@
 {{ define "main" }}
-
 {{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title) }}
 
 {{ partial "4-up" .Params.intro }}
@@ -19,7 +18,7 @@
 
 <div class="pb4">
   {{ range .Params.testimonials }}
-    {{ partial "blockquote" . }}
+  {{ partial "blockquote" . }}
   {{ end }}
 </div>
 

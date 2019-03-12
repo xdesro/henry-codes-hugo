@@ -7,16 +7,24 @@
     <section class="section">
         <div class="homepage-section">
             <div class="homepage-section__header">
-                <h3 class="homepage-section__title">Work.</h3>
+                <h2 class="homepage-section__title">Work.</h2>
                 <span class="homepage-section__counter">01</span>
             </div>
             <div class="homepage-section__content">
                 <ul class="list--none">
+                    {{ range (where .Pages "Section" "work") }}
                     <li class="work-item">
+                        <a href="{{.Permalink}}">
+                            <p class="work-item__client">{{.Title}}</p>
+                            <p class="work-item__tagline">{{.Params.tagline}}</p>
+                        </a>
+                    </li>
+                    {{ end }}
+                    {{/* <li class="work-item">
                         <p class="work-item__client">Promontech</p>
                         <p class="work-item__tagline">Style code and UI architecture for the future of digital
                             home-buying.</p>
-                    </li>
+                    </li> */}}
                     <li class="work-item">
                         <p class="work-item__client">Digital Continuum</p>
                         <p class="work-item__tagline">A framework for digital delivery for enterprise companies.</p>
@@ -32,12 +40,12 @@
         </div>
         <div class="homepage-section">
             <div class="homepage-section__header">
-                <h3 class="homepage-section__title">Experience.</h3>
+                <h2 class="homepage-section__title">Experience.</h2>
                 <span class="homepage-section__counter">02</span>
             </div>
             <div class="homepage-section__content">
                 <ul class="list--none">
-                    {{ range where .Pages "Section" "experience" }}
+                    {{ range ((where .Pages "Section" "experience").ByParam "start_date").Reverse }}
                     <li class="experience-item">
                         <p class="experience-item__header">
                             <span class="experience-item__role">{{ .Params.role }}</span> @
@@ -53,25 +61,31 @@
         </div>
         <div class="homepage-section experiments">
             <div class="homepage-section__header">
-                <h3 class="homepage-section__title">Experiments &amp; Ideas.</h3>
+                <h2 class="homepage-section__title">Experiments &amp; Ideas.</h2>
                 <span class="homepage-section__counter">03</span>
             </div>
             <div class="homepage-section__content">
                 <ul class="list--arrow-style">
                     <li>A pure SCSS Material Design palette generator</li>
-                    <li>SVG
-                        <code>&lt;clip-path&gt;</code> to create works of art with CSS.</li>
                     <li>#Codevember: A month of daily creative code micro-projects.</li>
                     <li>Pure CSS isometric towers CSS art.</li>
-                    <li>An Alfred 3 package for making your text very ˢᵐᵒˡ.</li>
+                    <!--<li>An Alfred 3 package for making your text very ˢᵐᵒˡ.</li> -->
+                    {{ range (where .Pages "Section" "post") }}
+                    <li>
+                        <a {{ if .Params.link }} href="{{.Params.link}}" target="_blank" {{ else }} href="{{ .Permalink }}"
+                            {{ end }}>
+                            {{ .Title }}
+                        </a>
+                    </li>
+                    {{ end }}
                 </ul>
-                <a href="#" class="link link--view-all">View All</a>
+                <a href="/post" class="link link--view-all">View All</a>
             </div>
         </div>
         <div class="homepage-section">
             {{ with .Site.GetPage "/contact" }}
             <div class="homepage-section__header">
-                <h3 class="homepage-section__title">{{ .Params.title }}.</h3>
+                <h2 class="homepage-section__title">{{ .Params.title }}.</h2>
                 <span class="homepage-section__counter">{{ .Params.page_number }}</span>
             </div>
             <div class="homepage-section__content">

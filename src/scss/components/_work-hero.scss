@@ -1,0 +1,89 @@
+.work-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    height: 50vh;
+
+    &__background {
+        overflow: hidden;
+        height: 100%;
+        background-color: $mono-0;
+
+        img {
+            $blur: 6px;
+            $blur-offset: $blur * (4/3);
+            width: calc(100% + #{2 *  $blur-offset});
+            min-height: calc(100% + #{2 *  $blur-offset});
+            margin-left: -#{$blur-offset};
+            margin-top: -#{$blur-offset};
+            filter: blur($blur) saturate(0%) brightness(41%)
+        }
+    }
+
+    &__info {
+        padding-top: 50px;
+
+        bottom: 0;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        color: $mono-100;
+        padding: 60px 0;
+    }
+
+    &__role {
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 2.04px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 72px;
+    }
+
+    &__tagline {
+        margin-bottom: 20px;
+        font-size: 24px;
+        line-height: 1.5;
+
+        @include screen(md) {
+            font-size: 32px;
+        }
+    }
+
+    &__tags {
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: 15px;
+        justify-items: start;
+        justify-content: start
+    }
+
+    &__tag {
+        font-family: $font-mono;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 2.04px;
+        text-transform: uppercase;
+        border: 1px solid $mono-100;
+        padding: 5px 9px;
+        border-radius: 2px;
+        color: $mono-100;
+        text-align: center;
+        text-decoration: none;
+
+        &:hover {
+            background: $mono-100;
+            color: $mono-0;
+        }
+    }
+
+    +div {
+        margin-top: calc(50vh + 100px);
+    }
+}

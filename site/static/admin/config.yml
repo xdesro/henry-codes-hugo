@@ -13,6 +13,7 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Intro Blurb", name: "description", widget: "text" }
+      - { label: "Link", name: "link", widget: "text", required: false }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "experience"
@@ -164,16 +165,3 @@ collections: # A list of collections the CMS should be able to edit
                   },
                 ],
             }
-      - file: "site/content/values/_index.md"
-        label: "Values Page"
-        name: "values"
-        fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - label: Values
-            name: values
-            widget: list
-            fields:
-              - { label: Heading, name: heading, widget: string }
-              - { label: Text, name: text, widget: text }
-              - { label: Image, name: imageUrl, widget: image }
