@@ -2,7 +2,7 @@
 title: "Promontech"
 role: UI Engineer
 tagline: Style code and UI architecture for the future of digital home-buying.
-hero_image: http://source.unsplash.com/60vbCSM5I5E
+hero_image: https://source.unsplash.com/60vbCSM5I5E
 tags: [css, scss, a11y, gulp]
 sections:
   - title: the Role
