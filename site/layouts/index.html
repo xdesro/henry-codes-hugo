@@ -20,22 +20,8 @@
                         </a>
                     </li>
                     {{ end }}
-                    {{/* <li class="work-item">
-                        <p class="work-item__client">Promontech</p>
-                        <p class="work-item__tagline">Style code and UI architecture for the future of digital
-                            home-buying.</p>
-                    </li> */}}
-                    <li class="work-item">
-                        <p class="work-item__client">Digital Continuum</p>
-                        <p class="work-item__tagline">A framework for digital delivery for enterprise companies.</p>
-                    </li>
-                    <li class="work-item">
-                        <p class="work-item__client">Absolute Merch</p>
-                        <p class="work-item__tagline">Slick, responsive, and animated solutions for a music e-commerce
-                            platform.</p>
-                    </li>
                 </ul>
-                <a href="#" class="link link--view-all">View All</a>
+                <a href="/work" class="link link--view-all">View All</a>
             </div>
         </div>
         <div class="homepage-section">
@@ -66,10 +52,6 @@
             </div>
             <div class="homepage-section__content">
                 <ul class="list--arrow-style">
-                    <li>A pure SCSS Material Design palette generator</li>
-                    <li>#Codevember: A month of daily creative code micro-projects.</li>
-                    <li>Pure CSS isometric towers CSS art.</li>
-                    <!--<li>An Alfred 3 package for making your text very ˢᵐᵒˡ.</li> -->
                     {{ range (where .Pages "Section" "post") }}
                     <li>
                         <a {{ if .Params.link }} href="{{.Params.link}}" target="_blank" {{ else }} href="{{ .Permalink }}"

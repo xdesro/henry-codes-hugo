@@ -24,14 +24,19 @@
 
     &__info {
         padding-top: 50px;
-
         bottom: 0;
         position: absolute;
         z-index: 1;
         left: 0;
         right: 0;
         color: $mono-100;
-        padding: 60px 0;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    &__nav-link {
+        display: grid;
+        align-items: end;
     }
 
     &__role {
@@ -83,7 +88,15 @@
         }
     }
 
-    +div {
-        margin-top: calc(50vh + 100px);
+    +div,
+    +grid {
+        --margin-top: 0;
+        // margin-top: calc(50vh + var(--margin-top));
+
+        margin-top: 50vh;
+
+        @include screen(sm) {
+            --margin-top: 0px;
+        }
     }
 }

@@ -67,9 +67,9 @@
     &__title {
         font-weight: 700;
         font-size: 24apx;
-        color: $mono-0;
         margin-block-end: 0;
         margin-block-start: 0;
+        color: $mono-0;
     }
 
     &__counter {
@@ -80,6 +80,7 @@
     &__content {
         font-size: 18px;
         color: $mono-47;
+
         .list--social {
             display: grid;
             grid-template-columns: repeat(2, 1fr);

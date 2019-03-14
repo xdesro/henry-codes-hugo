@@ -3,27 +3,22 @@
     <div class="work-hero__background">
         <img src="{{ .Params.hero_image }}" alt="" />
     </div>
-    <div class="work-hero__info container grid">
-        <div class="column" span="3+4">
-            <div class="work-hero__role">{{ .Params.role }}</div>
-            <div class="work-hero__title">{{ .Params.title }}</div>
-            <div class="work-hero__tagline">{{ .Params.tagline }}</div>
-            <div class="work-hero__tags">
-                {{ range .Params.tags }}
-                <a class="work-hero__tag" href="/tags/{{.}}">{{ . }}</a>
-                {{ end }}
-            </div>
-        </div>
-    </div>
+    {{ partial "work-hero.html" . }}
 </div>
-<div class="container grid work-content">
-    {{ range .Params.sections }}
-    <div class="column work-content__title" span="1+2">
-        {{ .title }}
-    </div>
-    <div class="column work-content__body" span="3+5">
-        {{ range .body }}<p>{{ . }}</p>{{ end }}
-    </div>
-    {{ end }}
+<div class="container">
+    <grid class="work-content" columns="8" columns-s="1">
+        <c span="3+6" span-s="row">{{ .Content }}</c>
+        {{ range .Params.sections }}
+        <c class="work-content__title" span="1+2" span-s="row">
+            {{ .title }}
+        </c>
+        <c class="work-content__body" span="3+6" span-s="row">
+            {{ range .body }}<p>{{ . }}</p>{{ end }}
+        </c>
+        {{ end }}
+    </grid>
+</div>
+<div class="container">
+    <a href="/" class="link link--return link--padded">Go home</a>
 </div>
 {{ end }}

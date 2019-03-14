@@ -1,0 +1,15 @@
+<grid class="container work-hero__info" columns="8">
+    <c span="1" class="work-hero__nav-link">
+        <a href="/work" class="link link--return link--light">More Work</a>
+    </c>
+    <c span="3+4" span-s="row">
+        <div class="work-hero__role">{{ .Params.role }}</div>
+        <div class="work-hero__title">{{ .Params.title }}</div>
+        <div class="work-hero__tagline">{{ .Params.tagline }}</div>
+        <div class="work-hero__tags">
+            {{ range .Params.tags }}
+            <a class="work-hero__tag" href="/tags/{{.}}">{{ . }}</a>
+            {{ end }}
+        </div>
+    </c>
+</grid>

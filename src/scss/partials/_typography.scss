@@ -119,13 +119,36 @@ a {
     text-decoration: none;
     color: $mono-47;
 
+    &--light {
+        color: $mono-100;
+
+        &:hover {
+            color: $mono-47;
+        }
+    }
+
+    &--padded {
+        padding: 20px;
+    }
+
+    &--return,
     &--view-all {
         font-weight: 700;
         font-size: 14px;
         letter-spacing: 3.5px;
-        text-align: right;
         text-transform: uppercase;
         display: block;
+    }
+
+    &--return {
+        &:before {
+            content: "←";
+            margin-right: 10px;
+        }
+    }
+
+    &--view-all {
+        text-align: right;
 
         &:after {
             content: "→";

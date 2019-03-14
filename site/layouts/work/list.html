@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{ partial "subheader-full-width.html" . }}
+<div class="container">
+    {{ range .Pages }}
+    <a href="{{.Permalink}}" class="work-entry">
+        <grid columns="8">
+            <c span="3">
+                <div class="work-entry__image">
+                    <img src="{{ .Params.hero_image }}" alt="{{ .Params.tagline }}">
+                </div>
+            </c>
+            <c span="5+4" span-s="row">
+                <div class="work-entry__title">{{ .Title}}.</div>
+                <div class="work-entry__tagline">{{ .Params.tagline }}</div>
+            </c>
+        </grid>
+    </a>
+    {{ end }}
+</div>
+{{end}}

@@ -1,0 +1,21 @@
+.page-header {
+    border-bottom: 4px solid $mono-0;
+    margin-bottom: 40px;
+
+    &__title {
+        font-size: 48px;
+        color: $mono-0;
+    }
+
+    &__description {
+        display: grid;
+        align-items: end;
+
+        p {
+            font-size: 32px;
+            color: #777777;
+            letter-spacing: 0;
+            line-height: 48px;
+        }
+    }
+}

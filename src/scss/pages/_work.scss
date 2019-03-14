@@ -21,11 +21,79 @@
         }
     }
 
-    &__body {
+    >c {
         margin-bottom: 100px;
     }
 
     p {
         margin-block-start: 0;
+    }
+}
+
+.work-entry {
+    text-decoration: none;
+    color: $mono-0;
+    margin-bottom: 40px;
+    display: block;
+
+    grid {
+        align-items: center;
+    }
+
+    &__image {
+        height: 220px;
+        overflow: hidden;
+        position: relative;
+        display: none;
+
+        @include screen(sm) {
+            display: block;
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 100%;
+            filter: saturate(0);
+
+        }
+
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 28px;
+        letter-spacing: 0;
+        margin-bottom: 5px;
+        position: relative;
+
+        &:before {
+            content: "";
+            top: 50%;
+            margin-top: -1px;
+            height: 2px;
+            background: $mono-47;
+            position: absolute;
+            width: 7vw;
+            max-width: 90px;
+            left: calc(-7vw - 15px);
+            display: none;
+
+            @include screen(sm) {
+                display: block;
+            }
+
+            @include screen(lg) {
+                left: -105px;
+            }
+        }
+    }
+
+    &__tagline {
+        font-size: 20px;
+        letter-spacing: 0;
+        color: $mono-47;
+        line-height: 30px;
     }
 }

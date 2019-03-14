@@ -1,4 +1,4 @@
-// @import 'vendor/raster.grid.css';
+@import 'vendor/raster.grid';
 @import 'partials/variables';
 @import 'partials/mixins';
 @import 'partials/typography';
@@ -6,6 +6,7 @@
 
 @import 'components/header';
 @import 'components/work-hero';
+@import 'components/page-header';
 
 @import 'pages/index';
 @import 'pages/work';
