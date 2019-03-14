@@ -38,6 +38,7 @@
     "gulp-util": "^3.0.7",
     "imports-loader": "^0.8.0",
     "netlify-cms": "^2.3.3",
+    "pa11y": "^5.1.0",
     "react": "16.7.0",
     "uncss": "^0.16.0",
     "url-loader": "^1.0.0",
